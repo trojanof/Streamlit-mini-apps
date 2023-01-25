@@ -59,7 +59,7 @@ sns.boxplot(x='day', y='total_bill', hue='time', data=sorted_tips)
 ax.legend(loc='upper center')
 st.pyplot(fig)
 
-st.write('### Давайте взглянем на величину чаевых, которые оставили мужчины и женщины в разные дни')
+st.write('### Давайте взглянем на величину чаевых, которые оставили мужчины и женщины')
 st.write('*С разбивкой на курящих и не курящих*') 
 #fig, ax = plt.subplots(2,1, figsize=(8,10) )
 fig, ax = plt.subplots()
@@ -73,7 +73,7 @@ ax=sns.lmplot(x='total_bill', y='tip', data=tips.loc[tips['sex']=='Female'], hue
 ax.set(title='Female')
 st.pyplot(ax)
 
-st.write('### И в завершении давайте посмотрим какой процент от общего счета оставляли мужчины и женщины чаще всего')
+st.write('### И в завершении давайте посмотрим какой процент от общего счета оставляли мужчины и женщины чаще всего (tip_percent - процент от общего счета)')
 fig, ax = plt.subplots()
 tips['tip_percent'] = tips['tip']/tips['total_bill'] * 100
 sns.histplot(x='tip_percent', data=tips, hue='sex')
